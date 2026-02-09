@@ -102,6 +102,7 @@ class SessionManager extends EventEmitter {
 
     const proc = spawn('ttyd', [
       '-W', '-p', String(port),
+      '-b', `/terminal/${name}`,
       '-s', '9',
       '-t', 'theme={"background":"#000000"}',
       ...tmuxArgs
@@ -194,6 +195,7 @@ class SessionManager extends EventEmitter {
 
     const proc = spawn('ttyd', [
       '-W', '-p', String(port),
+      '-b', `/terminal/${name}`,
       '-s', '9',
       '-t', 'theme={"background":"#000000"}',
       ...tmuxArgs

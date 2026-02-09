@@ -12,8 +12,7 @@ const currentSession = computed(() => {
 const iframeSrc = computed(() => {
   if (!currentSession.value || currentSession.value.status !== "running")
     return null;
-  const host = window.location.hostname;
-  return `http://${host}:${currentSession.value.port}`;
+  return `/terminal/${currentSession.value.name}`;
 });
 </script>
 

@@ -1,7 +1,16 @@
 const { WebSocketServer } = require('ws');
 
 function setupWebSocket(server, sessionManager) {
-  const wss = new WebSocketServer({ server, path: '/ws' });
+  const wss = new WebSocketServer({ noServer: true });
+
+  server.on('upgrade', (req, socket, head) => {
+    const url = req.url || '';
+    const pathname = url.split('?')[0];
+    if (pathname !== '/ws') return;
+    wss.handleUpgrade(req, socket, head, (ws) => {
+      wss.emit('connection', ws, req);
+    });
+  });
 
   function broadcast(event, data) {
     const message = JSON.stringify({ event, data });
